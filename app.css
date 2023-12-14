@@ -50,11 +50,10 @@ body{
     height: 100%;
 }
 .car{
-
     width: 19px;
     height: 38px;
     position: relative;
-    background-image: url(http://127.0.0.1:8887/car.svg);
+    background-image: url(car.svg);
 }
 .leaderboard{
     width: 300px;

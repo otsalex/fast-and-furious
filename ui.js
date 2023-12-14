@@ -10,10 +10,7 @@ export class Ui{
         this.pauseBtnDiv = document.querySelector("#pauseButton");
         this.leadeboardDiv = document.querySelector("#leaderboard");
         this.scoreDiv = document.querySelector("#score");
-
         this.pauseBtnDiv.innerHTML = '&#9616;&#9616;';
-        
-        
     }
 
     printFirstGameboard(){
@@ -70,10 +67,10 @@ export class Ui{
         return rowDiv;
     }
     updateMenu(){
-        
         this.pauseBtnDiv.className = 'RunTimeMenu';
         this.scoreDiv.innerHTML = `<b>Score ${this.game.score}</b>`;
     }
+
     showLeaderboard(leaderboard){
         this.leadeboardDiv.style.display = "block";
         this.scoreDiv.style.display = "none";

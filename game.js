@@ -1,22 +1,26 @@
 import { Row } from "./row.js";
-
-
-
-export class Game{
-    
+export class Game {
     constructor(){
         this.state ={
             map: [],
         }
+
+        // change this to set initial speed - lower number, faster speed
+        this.interval = 80;
+        // change this to speed game up faster
+        this.speedingStep = 1
+
         this.carLocationY = 15;
         this.carLocationX = 6;
         this.score = 0;
         this.moveDirection = 0;
         this.gamePaused = true;
         this.gameOver = false;
-        this.interval = 200;
-        this.initalizeState();
+        this.initializeState();
         
+    }
+    raiseSpeed = () => {
+        this.interval -= this.speedingStep;
     }
     createNewRow(){      
             let move = Math.random();
@@ -32,7 +36,7 @@ export class Game{
                 roadShift = "right";
             }
 
-            //will not let the road too close to edges
+            // will not let the road too close to edges
             if(this.leftSide < 30.14){
                 this.leftSide += 15.57;
                 roadShift = null;
@@ -59,7 +63,7 @@ export class Game{
     }
 
 
-    initalizeState(){
+    initializeState(){
         this.lastRowLeftSide = 150;
         this.leftSide= 150;
         
@@ -72,7 +76,7 @@ export class Game{
                 case 'ArrowLeft':
                     // left
                     this.moveDirection--;
-                    break;      
+                    break;
                 case 'ArrowRight':
                     // right
                     this.moveDirection++;
@@ -83,8 +87,7 @@ export class Game{
 
     
     moveTheCar(){
-        
-        
+
         switch(this.state.map[13].roadShift){
             
             case "left":
@@ -100,7 +103,7 @@ export class Game{
         
         
         let nextRowCarLocX = this.carLocationX + this.moveDirection;
-
+        // FOR DEBUGGING:
         // console.log("------------")
         // console.log(this.state.map[15-2].roadShift)
         // console.log("next row:");
