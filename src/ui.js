@@ -23,24 +23,24 @@ export class Ui{
     }
 
     uiAddGameRow(row){
-    
+
         let rowDiv = document.createElement('div');
         let roadDiv = document.createElement('div');
         let leftEdgeDiv = document.createElement('div');
         let rightEdgeDiv = document.createElement('div');
-    
+
         rowDiv.className = "row";
         roadDiv.className = "road";
         leftEdgeDiv.className = "edge";
         rightEdgeDiv.className = "edge";
-        
+
         rowDiv.style.height = this.rowHeight + "px";
-        
+
 
         leftEdgeDiv.style.width = row.leftSide + "px";
         roadDiv.style.width = this.roadWidth + "px";
         rightEdgeDiv.style.width = this.screenWidth - row.leftSide - this.roadWidth + "px";
-    
+
 
         for (let index = 0; index < 10; index++) {
             let roadLineDiv = document.createElement('div');
@@ -54,16 +54,16 @@ export class Ui{
             }
             roadDiv.append(roadLineDiv);
         }
-        if(this.game.holder == undefined){
+        if(this.game.holder === undefined){
             rowDiv.id = "row100";
         } else{
             rowDiv.id = "row" + this.game.holder;
         }
-        
+
         rowDiv.appendChild(leftEdgeDiv);
         rowDiv.appendChild(roadDiv);
         rowDiv.appendChild(rightEdgeDiv);
-    
+
         return rowDiv;
     }
     updateMenu(){
@@ -82,11 +82,11 @@ export class Ui{
                 let score = (index + 1) + ". " + leaderboard[index];
                 HtmlText += "<div>" + score + "</div>"
             };
-               
+
             this.leadeboardDiv.innerHTML = HtmlText;
-            
+
         }
-        
+
     }
     hideLeaderboard(){
         this.leadeboardDiv.style.display = "none";

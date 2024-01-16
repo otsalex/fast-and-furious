@@ -1,4 +1,4 @@
-export class Row{
+export class Row {
     constructor(leftSide, obstacle, roadShift){
         this.leftSide = leftSide;
         this.roadShift = roadShift;
