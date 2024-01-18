@@ -7,7 +7,7 @@ export class Game {
 
         // change this to set initial speed - lower number, faster speed
         this.interval = 80;
-        // change this to speed game up faster
+        // change this to speed up faster during the game
         this.speedingStep = 1
 
         this.carLocationY = 15;
@@ -27,9 +27,9 @@ export class Game {
         this.interval -= this.speedingStep;
     }
     createNewRow(){
-        let random = Math.random();
-        let roadShiftDirection = getRoadShiftDirection(random);
+        const random = Math.random();
         const obstacle = getObstacleIfLucky(random);
+        let roadShiftDirection = getRoadShiftDirection(random);
 
         this.leftSide = calculateShift(roadShiftDirection, this.lastRowLeftSide, this.leftSide);
 

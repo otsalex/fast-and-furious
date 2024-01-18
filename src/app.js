@@ -10,7 +10,11 @@ stopTheGame();
 
 
 document.addEventListener("keydown", function(e){
-    if (e.code === "Space" && game.gamePaused) startTheGame();
+    if (e.code === "Space" && game.gamePaused) {
+        startTheGame();
+    } else if(e.code === "Space") {
+        game.gamePaused = true;
+    }
 });
 
 function startTheGame() {

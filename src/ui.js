@@ -45,7 +45,7 @@ export class Ui{
         for (let index = 0; index < 10; index++) {
             let roadLineDiv = document.createElement('div');
 
-            if(row.obstacle == index){
+            if(row.obstacle === index){
                 roadLineDiv.id = "obstacle";
                 roadLineDiv.className = "obstacle";
             } else{
@@ -81,20 +81,13 @@ export class Ui{
             for (let index = 0; index < leaderboard.length; index++) {
                 let score = (index + 1) + ". " + leaderboard[index];
                 HtmlText += "<div>" + score + "</div>"
-            };
-
+            }
             this.leadeboardDiv.innerHTML = HtmlText;
-
         }
-
     }
     hideLeaderboard(){
         this.leadeboardDiv.style.display = "none";
         this.scoreDiv.style.display = "block";
         this.pauseBtnDiv.style.display = "block";
-        // let playButton = document.createElement("div");
-        // playButton.className = 'playButton'
-        // playButton.innerHTML = '\u23F5';
-        // this.menuDiv.appendChild(playButton);
     }
 }
